@@ -45,15 +45,31 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* IMAGE STYLING */
+.love-image {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 25px;
+  border: 5px solid rgba(255,255,255,0.7);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+  transition: transform 0.5s ease;
+}
+
+.love-image:hover {
+  transform: scale(1.05);
+}
+
 h1 {
   font-family: 'Great Vibes', cursive;
-  font-size: 48px;
+  font-size: 46px;
   margin-bottom: 10px;
 }
 
 .subtitle {
   font-family: 'Playfair Display', serif;
-  font-size: 22px;
+  font-size: 20px;
   margin-bottom: 25px;
 }
 
@@ -62,11 +78,6 @@ p {
   line-height: 1.9;
   font-weight: 300;
   margin-bottom: 20px;
-}
-
-.apology {
-  font-weight: 400;
-  margin-bottom: 25px;
 }
 
 button {
@@ -94,7 +105,7 @@ button:hover {
 }
 
 .hidden-letter.open {
-  max-height: 500px;
+  max-height: 600px;
 }
 
 .heart {
@@ -118,38 +129,43 @@ button:hover {
 
 <div class="container">
 
-  <h1>Good Morning, Beautiful ❤️</h1>
+  <!-- YOUR IMAGE HERE -->
+  <img src="https://i.ibb.co/bRRCV2r2/91f58db4-09be-4e8a-8552-be1089dabf8d.jpg" 
+       class="love-image" 
+       alt="Us">
+
+  <h1>Good Morning, Beautiful</h1>
   <div class="subtitle">Before your day begins…</div>
 
-  <p id="typedText" class="apology"></p>
+  <p id="typedText"></p>
 
   <button onclick="openLetter()">Open This 💌</button>
 
   <div class="hidden-letter" id="letter">
     <p>
-      I never want to be the reason you feel anything less than safe and loved.
+      I never want to be the reason you feel anything less than safe and valued.
       <br><br>
-      Even when I get things wrong, my heart is always yours.
+      Even when I get things wrong, my heart is still here —
+      steady, choosing you.
       <br><br>
-      Across countries, across time zones —
-      you are still the first thought in my mornings
-      and the last one before I sleep.
+      Across distance and quiet mornings,
+      you’re still the first thought that stays with me.
       <br><br>
-      If I could, I would kiss your forehead softly
-      and tell you that everything between us is worth protecting.
+      If today feels heavy,
+      imagine my hand in yours,
+      gently reminding you that what we have
+      is worth protecting.
       <br><br>
-      You matter to me more than my pride,
-      more than being right,
-      more than distance.
-      <br><br>
-      I love you. Gently. Deeply. Completely.
+      You matter to me more than my pride.
+      More than being right.
+      More than any small moment.
     </p>
   </div>
 
 </div>
 
 <script>
-const message = "I’m sorry if I hurt you. That was never my intention. You mean too much to me to ever take your heart lightly.";
+const message = "I’m really sorry if I hurt you. That was never my intention. You mean too much to me to ever treat your heart carelessly.";
 let i = 0;
 function typeWriter() {
   if (i < message.length) {
