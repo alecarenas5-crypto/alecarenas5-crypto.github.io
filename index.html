@@ -1,7 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>For You 🌸</title>
+
 <style>
 body {
   margin: 0;
@@ -9,92 +12,124 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
   font-family: 'Georgia', serif;
-  background: linear-gradient(to bottom right, #ffe6f0, #fff0f5);
+  background: linear-gradient(135deg, #ffe6f0, #fff5fa);
   overflow: hidden;
 }
-  
+
+/* Soft fade-in */
 .container {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.92);
   padding: 40px;
-  border-radius: 20px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-  max-width: 500px;
+  border-radius: 25px;
+  box-shadow: 0 20px 50px rgba(214, 51, 132, 0.15);
+  max-width: 520px;
+  text-align: center;
+  animation: fadeIn 1.5s ease forwards;
+  backdrop-filter: blur(6px);
 }
 
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Image styling */
+.love-image {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  border: 4px solid #ffd6e8;
+}
+
+/* Text styling */
 h1 {
   color: #d63384;
   font-size: 28px;
+  margin-bottom: 15px;
 }
 
 p {
   color: #555;
   font-size: 18px;
-  line-height: 1.6;
+  line-height: 1.7;
+  margin: 0 0 20px 0;
 }
 
+/* Button styling */
 button {
-  margin-top: 20px;
-  padding: 12px 25px;
+  margin-top: 15px;
+  padding: 12px 28px;
   border: none;
-  background-color: #ff66a3;
+  background: linear-gradient(45deg, #ff66a3, #ff85b3);
   color: white;
-  border-radius: 25px;
+  border-radius: 30px;
   font-size: 16px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(255, 102, 163, 0.3);
 }
 
 button:hover {
-  background-color: #e05590;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(255, 102, 163, 0.4);
 }
 
+/* Falling petals */
 .petal {
   position: absolute;
   top: -10px;
-  color: #ff99cc;
   font-size: 20px;
   animation: fall linear infinite;
+  opacity: 0.8;
 }
 
 @keyframes fall {
   to {
-    transform: translateY(110vh);
+    transform: translateY(110vh) rotate(360deg);
   }
 }
 </style>
 </head>
+
 <body>
 
-<img src= https://i.ibb.co/bRRCV2r2/91f58db4-09be-4e8a-8552-be1089dabf8d.jpg>
-  
 <div class="container">
+  <img src="https://i.ibb.co/bRRCV2r2/91f58db4-09be-4e8a-8552-be1089dabf8d.jpg" class="love-image" alt="Us">
+
   <h1>For When You Need Something Soft 🌸</h1>
+
   <p>
-    Even across countries,  
-    I still think about you in the quiet moments.  
-    <br><br>
-    If today feels heavy,  
-    imagine I’m holding your hand.  
-    <br><br>
-    You are cared for.  
-    You are chosen.  
+    Even across countries,<br>
+    I still think about you in the quiet moments.<br><br>
+
+    If today feels heavy,<br>
+    imagine I’m holding your hand.<br><br>
+
+    You are cared for.<br>
+    You are chosen.<br>
     You are deeply important to me.
   </p>
 
-  <button onclick="alert('I wish I could give you real flowers. Until then, this will have to do 🌸❤️')">
-    Click Here
+  <button onclick="showMessage()">
+    A Little Reminder 💗
   </button>
 </div>
 
 <script>
+function showMessage() {
+  alert("I wish I could give you real flowers. Until then, this will have to do 🌸❤️");
+}
+
 function createPetal() {
   const petal = document.createElement('div');
   petal.classList.add('petal');
   petal.innerHTML = '🌸';
   petal.style.left = Math.random() * 100 + 'vw';
-  petal.style.animationDuration = (3 + Math.random() * 5) + 's';
+  petal.style.animationDuration = (4 + Math.random() * 4) + 's';
   document.body.appendChild(petal);
 
   setTimeout(() => {
@@ -102,7 +137,7 @@ function createPetal() {
   }, 8000);
 }
 
-setInterval(createPetal, 300);
+setInterval(createPetal, 400);
 </script>
 
 </body>
