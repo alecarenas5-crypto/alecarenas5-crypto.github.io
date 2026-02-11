@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For You 🌸</title>
+<title>For You, When You Wake Up ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Great+Vibes&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
 body {
@@ -12,84 +14,101 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Georgia', serif;
-  background: linear-gradient(135deg, #ffe6f0, #fff5fa);
+  background: linear-gradient(-45deg, #fbc2eb, #fad0c4, #ffdde1, #fff1eb);
+  background-size: 400% 400%;
+  animation: gradient 18s ease infinite;
   overflow: hidden;
+  font-family: 'Poppins', sans-serif;
 }
 
-/* Soft fade-in */
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 .container {
-  background: rgba(255, 255, 255, 0.92);
-  padding: 40px;
-  border-radius: 25px;
-  box-shadow: 0 20px 50px rgba(214, 51, 132, 0.15);
-  max-width: 520px;
+  max-width: 600px;
+  padding: 50px 45px;
+  border-radius: 35px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.15);
   text-align: center;
-  animation: fadeIn 1.5s ease forwards;
-  backdrop-filter: blur(6px);
+  color: white;
+  animation: fadeIn 2s ease forwards;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
+  from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Image styling */
-.love-image {
-  width: 140px;
-  height: 140px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin-bottom: 20px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-  border: 4px solid #ffd6e8;
+h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 48px;
+  margin-bottom: 10px;
 }
 
-/* Text styling */
-h1 {
-  color: #d63384;
-  font-size: 28px;
-  margin-bottom: 15px;
+.subtitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  margin-bottom: 25px;
 }
 
 p {
-  color: #555;
-  font-size: 18px;
-  line-height: 1.7;
-  margin: 0 0 20px 0;
+  font-size: 17px;
+  line-height: 1.9;
+  font-weight: 300;
+  margin-bottom: 20px;
 }
 
-/* Button styling */
+.apology {
+  font-weight: 400;
+  margin-bottom: 25px;
+}
+
 button {
-  margin-top: 15px;
-  padding: 12px 28px;
+  padding: 14px 35px;
+  border-radius: 40px;
   border: none;
-  background: linear-gradient(45deg, #ff66a3, #ff85b3);
-  color: white;
-  border-radius: 30px;
-  font-size: 16px;
+  font-size: 15px;
+  letter-spacing: 1px;
+  background: white;
+  color: #d63384;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 8px 20px rgba(255, 102, 163, 0.3);
+  transition: 0.4s ease;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
 button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 25px rgba(255, 102, 163, 0.4);
+  transform: translateY(-4px);
 }
 
-/* Falling petals */
-.petal {
+.hidden-letter {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 1s ease;
+  margin-top: 20px;
+}
+
+.hidden-letter.open {
+  max-height: 500px;
+}
+
+.heart {
   position: absolute;
-  top: -10px;
+  bottom: -20px;
   font-size: 20px;
-  animation: fall linear infinite;
+  animation: floatUp linear infinite;
   opacity: 0.8;
 }
 
-@keyframes fall {
+@keyframes floatUp {
   to {
-    transform: translateY(110vh) rotate(360deg);
+    transform: translateY(-110vh);
+    opacity: 0;
   }
 }
 </style>
@@ -98,46 +117,68 @@ button:hover {
 <body>
 
 <div class="container">
-  <img src="https://i.ibb.co/bRRCV2r2/91f58db4-09be-4e8a-8552-be1089dabf8d.jpg" class="love-image" alt="Us">
 
-  <h1>For When You Need Something Soft 🌸</h1>
+  <h1>Good Morning, Beautiful ❤️</h1>
+  <div class="subtitle">Before your day begins…</div>
 
-  <p>
-    Even across countries,<br>
-    I still think about you in the quiet moments.<br><br>
+  <p id="typedText" class="apology"></p>
 
-    If today feels heavy,<br>
-    imagine I’m holding your hand.<br><br>
+  <button onclick="openLetter()">Open This 💌</button>
 
-    You are cared for.<br>
-    You are chosen.<br>
-    You are deeply important to me.
-  </p>
+  <div class="hidden-letter" id="letter">
+    <p>
+      I never want to be the reason you feel anything less than safe and loved.
+      <br><br>
+      Even when I get things wrong, my heart is always yours.
+      <br><br>
+      Across countries, across time zones —
+      you are still the first thought in my mornings
+      and the last one before I sleep.
+      <br><br>
+      If I could, I would kiss your forehead softly
+      and tell you that everything between us is worth protecting.
+      <br><br>
+      You matter to me more than my pride,
+      more than being right,
+      more than distance.
+      <br><br>
+      I love you. Gently. Deeply. Completely.
+    </p>
+  </div>
 
-  <button onclick="showMessage()">
-    A Little Reminder 💗
-  </button>
 </div>
 
 <script>
-function showMessage() {
-  alert("I wish I could give you real flowers. Until then, this will have to do 🌸❤️");
+const message = "I’m sorry if I hurt you. That was never my intention. You mean too much to me to ever take your heart lightly.";
+let i = 0;
+function typeWriter() {
+  if (i < message.length) {
+    document.getElementById("typedText").innerHTML += message.charAt(i);
+    i++;
+    setTimeout(typeWriter, 40);
+  }
+}
+typeWriter();
+
+function openLetter() {
+  document.getElementById("letter").classList.toggle("open");
 }
 
-function createPetal() {
-  const petal = document.createElement('div');
-  petal.classList.add('petal');
-  petal.innerHTML = '🌸';
-  petal.style.left = Math.random() * 100 + 'vw';
-  petal.style.animationDuration = (4 + Math.random() * 4) + 's';
-  document.body.appendChild(petal);
+function createHeart() {
+  const heart = document.createElement('div');
+  heart.classList.add('heart');
+  heart.innerHTML = '❤';
+  heart.style.left = Math.random() * 100 + 'vw';
+  heart.style.animationDuration = (6 + Math.random() * 4) + 's';
+  heart.style.fontSize = (15 + Math.random() * 20) + 'px';
+  document.body.appendChild(heart);
 
   setTimeout(() => {
-    petal.remove();
-  }, 8000);
+    heart.remove();
+  }, 10000);
 }
 
-setInterval(createPetal, 400);
+setInterval(createHeart, 600);
 </script>
 
 </body>
