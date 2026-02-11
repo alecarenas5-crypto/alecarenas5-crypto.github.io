@@ -10,7 +10,7 @@
 <style>
 body {
   margin: 0;
-  padding: 40px 20px;
+  padding: 0;
   background: linear-gradient(-45deg, #fbc2eb, #fad0c4, #ffdde1, #fff1eb);
   background-size: 400% 400%;
   animation: gradient 18s ease infinite;
@@ -23,11 +23,12 @@ body {
   100% { background-position: 0% 50%; }
 }
 
+/* Scrollable container with padding */
 .container {
   max-width: 600px;
   margin: auto;
-  padding: 40px;
-  border-radius: 30px;
+  padding: 30px 20px 60px 20px;
+  border-radius: 25px;
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -36,37 +37,40 @@ body {
   color: white;
 }
 
-/* Image */
+/* IMAGE */
 .love-image {
-  width: 150px;
-  height: 150px;
+  width: 140px;
+  height: 140px;
   object-fit: cover;
   border-radius: 50%;
-  margin-bottom: 20px;
+  margin: 0 auto 15px auto;
   border: 4px solid rgba(255,255,255,0.7);
   box-shadow: 0 10px 30px rgba(0,0,0,0.25);
 }
 
-/* Text */
+/* HEADLINE */
 h1 {
   font-family: 'Great Vibes', cursive;
-  font-size: 42px;
-  margin-bottom: 10px;
+  font-size: 38px;
+  margin: 10px 0 5px 0;
 }
 
+/* SUBTITLE */
 .subtitle {
   font-family: 'Playfair Display', serif;
-  font-size: 18px;
+  font-size: 16px;
   margin-bottom: 20px;
 }
 
+/* TEXT */
 p {
   font-size: 16px;
-  line-height: 1.8;
+  line-height: 1.7;
   font-weight: 300;
   margin-bottom: 20px;
 }
 
+/* BUTTON */
 button {
   padding: 12px 30px;
   border-radius: 30px;
@@ -82,6 +86,7 @@ button:hover {
   transform: translateY(-3px);
 }
 
+/* HIDDEN LETTER */
 .hidden-letter {
   max-height: 0;
   overflow: hidden;
@@ -92,6 +97,30 @@ button:hover {
 .hidden-letter.open {
   max-height: 400px;
 }
+
+/* RESPONSIVE ADJUSTMENTS */
+@media (max-width: 480px) {
+  .container {
+    padding: 25px 15px 50px 15px;
+  }
+  .love-image {
+    width: 120px;
+    height: 120px;
+  }
+  h1 {
+    font-size: 32px;
+  }
+  .subtitle {
+    font-size: 15px;
+  }
+  p {
+    font-size: 15px;
+  }
+  button {
+    font-size: 13px;
+    padding: 10px 25px;
+  }
+}
 </style>
 </head>
 
@@ -99,6 +128,7 @@ button:hover {
 
 <div class="container">
 
+  <!-- IMAGE AT THE TOP -->
   <img src="https://i.ibb.co/bRRCV2r2/91f58db4-09be-4e8a-8552-be1089dabf8d.jpg"
        class="love-image"
        alt="Us">
