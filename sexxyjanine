@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>For You ❤️</title>
+<style>
+body {
+  background-color: #fff5f7;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  padding-top: 100px;
+}
+img {
+  width: 250px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+h1 {
+  color: #d6336c;
+}
+p {
+  font-size: 18px;
+  max-width: 500px;
+  margin: auto;
+  color: #444;
+}
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #d6336c;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<h1>For When You Need a Reminder 🌹</h1>
+
+<img src=https://drive.google.com/file/d/16TKaZnuIunyH6rGhbPQfRCpwLw-whDuw/view alt="Us">
+
+<p>
+Even from another country,  
+you are still the best part of my day.  
+  
+If you’re feeling low, read this slowly:  
+You are loved.  
+You are chosen.  
+You matter to me more than distance ever could.
+</p>
+
+<button onclick="alert('I can’t wait to hold you again. ❤️')">
+Click Me
+</button>
+
+</body>
+</html> 
