@@ -3,21 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For You, When You Wake Up ❤️</title>
+<title>For You 🤍</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Great+Vibes&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
 body {
   margin: 0;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 40px 20px;
   background: linear-gradient(-45deg, #fbc2eb, #fad0c4, #ffdde1, #fff1eb);
   background-size: 400% 400%;
   animation: gradient 18s ease infinite;
-  overflow: hidden;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -29,98 +25,72 @@ body {
 
 .container {
   max-width: 600px;
-  padding: 50px 45px;
-  border-radius: 35px;
+  margin: auto;
+  padding: 40px;
+  border-radius: 30px;
   background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(25px);
+  backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
   text-align: center;
   color: white;
-  animation: fadeIn 2s ease forwards;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* IMAGE STYLING */
+/* Image */
 .love-image {
-  width: 160px;
-  height: 160px;
+  width: 150px;
+  height: 150px;
   object-fit: cover;
   border-radius: 50%;
-  margin-bottom: 25px;
-  border: 5px solid rgba(255,255,255,0.7);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
-  transition: transform 0.5s ease;
+  margin-bottom: 20px;
+  border: 4px solid rgba(255,255,255,0.7);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
 }
 
-.love-image:hover {
-  transform: scale(1.05);
-}
-
+/* Text */
 h1 {
   font-family: 'Great Vibes', cursive;
-  font-size: 46px;
+  font-size: 42px;
   margin-bottom: 10px;
 }
 
 .subtitle {
   font-family: 'Playfair Display', serif;
-  font-size: 20px;
-  margin-bottom: 25px;
+  font-size: 18px;
+  margin-bottom: 20px;
 }
 
 p {
-  font-size: 17px;
-  line-height: 1.9;
+  font-size: 16px;
+  line-height: 1.8;
   font-weight: 300;
   margin-bottom: 20px;
 }
 
 button {
-  padding: 14px 35px;
-  border-radius: 40px;
+  padding: 12px 30px;
+  border-radius: 30px;
   border: none;
-  font-size: 15px;
-  letter-spacing: 1px;
+  font-size: 14px;
   background: white;
   color: #d63384;
   cursor: pointer;
-  transition: 0.4s ease;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  transition: 0.3s ease;
 }
 
 button:hover {
-  transform: translateY(-4px);
+  transform: translateY(-3px);
 }
 
 .hidden-letter {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 1s ease;
+  transition: max-height 0.8s ease;
   margin-top: 20px;
 }
 
 .hidden-letter.open {
-  max-height: 600px;
-}
-
-.heart {
-  position: absolute;
-  bottom: -20px;
-  font-size: 20px;
-  animation: floatUp linear infinite;
-  opacity: 0.8;
-}
-
-@keyframes floatUp {
-  to {
-    transform: translateY(-110vh);
-    opacity: 0;
-  }
+  max-height: 400px;
 }
 </style>
 </head>
@@ -129,72 +99,41 @@ button:hover {
 
 <div class="container">
 
-  <!-- YOUR IMAGE HERE -->
-  <img src="https://i.ibb.co/bRRCV2r2/91f58db4-09be-4e8a-8552-be1089dabf8d.jpg" 
-       class="love-image" 
+  <img src="https://i.ibb.co/bRRCV2r2/91f58db4-09be-4e8a-8552-be1089dabf8d.jpg"
+       class="love-image"
        alt="Us">
 
-  <h1>Good Morning, Beautiful</h1>
-  <div class="subtitle">Before your day begins…</div>
+  <h1>Good Morning 🤍</h1>
+  <div class="subtitle">Before your day starts…</div>
 
-  <p id="typedText"></p>
+  <p>
+    I’m really sorry if I hurt you.  
+    That was never my intention.
+    <br><br>
+    You matter to me more than being right.
+    More than my pride.
+  </p>
 
   <button onclick="openLetter()">Open This 💌</button>
 
   <div class="hidden-letter" id="letter">
     <p>
-      I never want to be the reason you feel anything less than safe and valued.
+      Even across distance,
+      you’re still the first thought in my mornings.
       <br><br>
-      Even when I get things wrong, my heart is still here —
-      steady, choosing you.
+      I care about what we have.
+      I care about you.
       <br><br>
-      Across distance and quiet mornings,
-      you’re still the first thought that stays with me.
-      <br><br>
-      If today feels heavy,
-      imagine my hand in yours,
-      gently reminding you that what we have
-      is worth protecting.
-      <br><br>
-      You matter to me more than my pride.
-      More than being right.
-      More than any small moment.
+      And I don’t ever want you to doubt that.
     </p>
   </div>
 
 </div>
 
 <script>
-const message = "I’m really sorry if I hurt you. That was never my intention. You mean too much to me to ever treat your heart carelessly.";
-let i = 0;
-function typeWriter() {
-  if (i < message.length) {
-    document.getElementById("typedText").innerHTML += message.charAt(i);
-    i++;
-    setTimeout(typeWriter, 40);
-  }
-}
-typeWriter();
-
 function openLetter() {
   document.getElementById("letter").classList.toggle("open");
 }
-
-function createHeart() {
-  const heart = document.createElement('div');
-  heart.classList.add('heart');
-  heart.innerHTML = '❤';
-  heart.style.left = Math.random() * 100 + 'vw';
-  heart.style.animationDuration = (6 + Math.random() * 4) + 's';
-  heart.style.fontSize = (15 + Math.random() * 20) + 'px';
-  document.body.appendChild(heart);
-
-  setTimeout(() => {
-    heart.remove();
-  }, 10000);
-}
-
-setInterval(createHeart, 600);
 </script>
 
 </body>
