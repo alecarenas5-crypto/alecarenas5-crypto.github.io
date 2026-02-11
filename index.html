@@ -1,58 +1,108 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>For You ❤️</title>
+<title>For You 🌸</title>
 <style>
 body {
-  background-color: #fff5f7;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  font-family: Arial, sans-serif;
-  padding-top: 100px;
+  font-family: 'Georgia', serif;
+  background: linear-gradient(to bottom right, #ffe6f0, #fff0f5);
+  overflow: hidden;
 }
-img {
-  width: 250px;
-  border-radius: 15px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-}
-h1 {
-  color: #d6336c;
-}
-p {
-  font-size: 18px;
+  <img src= https://ibb.co/CssYyMnM alt="Us">
+
+.container {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
   max-width: 500px;
-  margin: auto;
-  color: #444;
 }
+
+h1 {
+  color: #d63384;
+  font-size: 28px;
+}
+
+p {
+  color: #555;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
 button {
   margin-top: 20px;
-  padding: 10px 20px;
+  padding: 12px 25px;
   border: none;
-  background-color: #d6336c;
+  background-color: #ff66a3;
   color: white;
-  border-radius: 20px;
+  border-radius: 25px;
+  font-size: 16px;
   cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #e05590;
+}
+
+.petal {
+  position: absolute;
+  top: -10px;
+  color: #ff99cc;
+  font-size: 20px;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh);
+  }
 }
 </style>
 </head>
 <body>
 
-<h1>For When You Need a Reminder 🌹</h1>
+<div class="container">
+  <h1>For When You Need Something Soft 🌸</h1>
+  <p>
+    Even across countries,  
+    I still think about you in the quiet moments.  
+    <br><br>
+    If today feels heavy,  
+    imagine I’m holding your hand.  
+    <br><br>
+    You are cared for.  
+    You are chosen.  
+    You are deeply important to me.
+  </p>
 
-<img src= https://ibb.co/CssYyMnM alt="Us">
+  <button onclick="alert('I wish I could give you real flowers. Until then, this will have to do 🌸❤️')">
+    Click Here
+  </button>
+</div>
 
-<p>
-Even from another country,  
-you are still the best part of my day.  
-  
-If you’re feeling low, read this slowly:  
-You are loved.  
-You are chosen.  
-You matter to me more than distance ever could.
-</p>
+<script>
+function createPetal() {
+  const petal = document.createElement('div');
+  petal.classList.add('petal');
+  petal.innerHTML = '🌸';
+  petal.style.left = Math.random() * 100 + 'vw';
+  petal.style.animationDuration = (3 + Math.random() * 5) + 's';
+  document.body.appendChild(petal);
 
-<button onclick="alert('I can’t wait to hold you again. ❤️')">
-Click Me
-</button>
+  setTimeout(() => {
+    petal.remove();
+  }, 8000);
+}
+
+setInterval(createPetal, 300);
+</script>
 
 </body>
-</html> 
+</html>
