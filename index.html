@@ -15,6 +15,8 @@ body {
   background-size: 400% 400%;
   animation: gradient 18s ease infinite;
   font-family: 'Poppins', sans-serif;
+  position: relative;
+  overflow-x: hidden;
 }
 
 @keyframes gradient {
@@ -23,7 +25,6 @@ body {
   100% { background-position: 0% 50%; }
 }
 
-/* Scrollable container with padding */
 .container {
   max-width: 600px;
   margin: auto;
@@ -46,6 +47,11 @@ body {
   margin: 0 auto 15px auto;
   border: 4px solid rgba(255,255,255,0.7);
   box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  transition: transform 0.5s ease;
+}
+
+.love-image:hover {
+  transform: scale(1.05);
 }
 
 /* HEADLINE */
@@ -98,6 +104,22 @@ button:hover {
   max-height: 400px;
 }
 
+/* HEARTS */
+.heart {
+  position: absolute;
+  bottom: -20px;
+  font-size: 20px;
+  animation: floatUp linear infinite;
+  opacity: 0.8;
+}
+
+@keyframes floatUp {
+  to {
+    transform: translateY(-110vh);
+    opacity: 0;
+  }
+}
+
 /* RESPONSIVE ADJUSTMENTS */
 @media (max-width: 480px) {
   .container {
@@ -128,7 +150,6 @@ button:hover {
 
 <div class="container">
 
-  <!-- IMAGE AT THE TOP -->
   <img src="https://i.ibb.co/bRRCV2r2/91f58db4-09be-4e8a-8552-be1089dabf8d.jpg"
        class="love-image"
        alt="Us">
@@ -164,6 +185,23 @@ button:hover {
 function openLetter() {
   document.getElementById("letter").classList.toggle("open");
 }
+
+// Floating hearts
+function createHeart() {
+  const heart = document.createElement('div');
+  heart.classList.add('heart');
+  heart.innerHTML = '❤';
+  heart.style.left = Math.random() * 100 + 'vw';
+  heart.style.animationDuration = (6 + Math.random() * 4) + 's';
+  heart.style.fontSize = (15 + Math.random() * 20) + 'px';
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 10000);
+}
+
+setInterval(createHeart, 600);
 </script>
 
 </body>
