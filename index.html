@@ -122,10 +122,32 @@ function createHeart(){
 setInterval(createHeart,400);
 </script>
 
-<audio id="bgMusic" autoplay loop>
+
+<audio id="music" autoplay loop muted>
   <source src="music.mp3" type="audio/mpeg">
 </audio>
 
+<script>
+const music = document.getElementById("music");
+
+document.addEventListener("DOMContentLoaded", () => {
+  music.volume = 0.5;
+  
+  const playPromise = music.play();
+
+  if (playPromise !== undefined) {
+    playPromise.then(() => {
+      music.muted = false;
+    }).catch(() => {
+      document.body.addEventListener("click", () => {
+        music.muted = false;
+        music.play();
+      }, { once: true });
+    });
+  }
+});
+</script>
+  
 <style>
 .sparkle{
   position:fixed;
