@@ -123,29 +123,23 @@ setInterval(createHeart,400);
 </script>
 
 
-<audio id="music" autoplay loop muted>
+<audio id="bgMusic" loop preload="auto">
   <source src="music.mp3" type="audio/mpeg">
 </audio>
 
 <script>
-const music = document.getElementById("music");
+const bgMusic = document.getElementById("bgMusic");
 
-document.addEventListener("DOMContentLoaded", () => {
-  music.volume = 0.5;
-  
-  const playPromise = music.play();
+/* start music on first interaction */
+function startMusic(){
+  bgMusic.volume = 0.5;
+  bgMusic.play().catch(()=>{});
+  document.removeEventListener("click", startMusic);
+  document.removeEventListener("touchstart", startMusic);
+}
 
-  if (playPromise !== undefined) {
-    playPromise.then(() => {
-      music.muted = false;
-    }).catch(() => {
-      document.body.addEventListener("click", () => {
-        music.muted = false;
-        music.play();
-      }, { once: true });
-    });
-  }
-});
+document.addEventListener("click", startMusic);
+document.addEventListener("touchstart", startMusic);
 </script>
   
 <style>
